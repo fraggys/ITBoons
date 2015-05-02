@@ -1,0 +1,24 @@
+{
+  "name": "ITBoons",
+  "version": "0.0.0",
+  "authors": [
+    "fraggys <gauraveverywhere@gmail.com>"
+  ],
+  "dependencies": {
+    "jquery": "~1.10.2"
+  },
+  "description": "ITBoons first go",
+  "main": "js\\feed-reader.js",
+  "keywords": [
+    "feedReader",
+    "notifications"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
