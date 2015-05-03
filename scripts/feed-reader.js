@@ -1,12 +1,14 @@
 $(document).ready(function () {
+    localStorage.msgCount = 0;
     getData();
+
     window.setInterval(function () {
         getData();
     }, 50000);
 
     $("#notificationLink").click(function () {
         $("#feedArea").fadeToggle(300);
-        $("#feedCount").fadeOut("slow");
+        $("#msgCount").fadeOut("slow");
         return false;
     });
 //Document Click hiding the popup
@@ -23,13 +25,18 @@ $(document).ready(function () {
                 htmlStr = htmlStr + "<a class='list-group-item' href='" + el.find("link").text() + "'\>"
                 + "\<h4 class='list-group-item-heading'>" + el.find("title").text() + "\</h4></a>";
 
-                /*if (localStorage.clickcount) {
-                 localStorage.clickcount = Number(localStorage.clickcount) + 1;
-                 } else {
-                 localStorage.clickcount = 1;
-                 }*/
+                if (Number(localStorage.msgCount)>=0) {
+                    localStorage.msgCount = Number(localStorage.msgCount) + 1;
+                } else {
+                    localStorage.msgCount = 1;
+                }
             });
             $('#feedList').append(htmlStr);
+            updateMsgCount();
         });
+    }
+
+    function updateMsgCount() {
+        $('#msgCount').text(localStorage.msgCount);
     }
 });
