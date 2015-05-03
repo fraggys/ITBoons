@@ -1,0 +1,15 @@
+#feedArea {
+    overflow: visible;
+    position: absolute;
+    top: 50px;
+    margin-left: -170px;
+    width: 400px;
+    z-index: -1;
+    display: none;
+}
+
+.list-group-item {
+}
+
+.list-group-item-heading, #feedList > h4 {
+}
